@@ -1,0 +1,10 @@
+.vscode
+kafosa/.env
+.env
+venv
+# Django #
+*.log
+*.pot
+db.sqlite3
+*.DS_Store
+**/.DS_Store

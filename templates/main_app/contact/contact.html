@@ -1,0 +1,70 @@
+{% extends 'main_app/base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <h4 class="text-center">CONTACTS US</h4>
+  <div class="row">
+    <div class="col-md-6 mt-3">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.864065851473!2d39.68318951411851!3d-4.048142346013838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184012f103d0629b%3A0x207d88ab1b116b74!2sTexas%20Alarms%20(K)%20Ltd!5e0!3m2!1sen!2ske!4v1628596451227!5m2!1sen!2ske"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        class="mymap"
+      ></iframe>
+    </div>
+    <div class="col-md-6 text-center mt-3">
+      <p>KENYA ASSOCIATION OF FOSAS (KAFOSA)</p>
+      <p>REG NO. 36705/SOC/62747</p>
+      <p>P.O. Box 83688 - 80100 Mombasa, Kenya,</p>
+      <p>Mobile: 0704319705</p>
+      <p>Mobile: 0733852356</p>
+      <p>Mobile: 0723520407</p>
+      <p>Email: info@kafosa.or.ke</p>
+      <p>Texas Building, Nyali.</p>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-12 my-2">
+      <h4 class="text-center my-2 py-2">Contact Us Form</h4>
+      <form method="post" action="{% url 'contact_us' %}">
+        {% csrf_token %}
+        <div class="row g-4 align-items-center">
+          <div class="col-auto">
+            <label class="col-form-label">Full Name</label>
+          </div>
+          <div class="col-auto">
+            <input type="text" class="form-control" name="name" required />
+          </div>
+          <div class="col-auto">
+            <label class="col-form-label">Phone</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" class="form-control" name="phone" required />
+          </div>
+        </div>
+        <div class="mb-3 mt-3">
+          <label class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email" required />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+
+        <div class="mb-3 mt-3">
+          <label class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            name="message"
+            rows="3"
+            name="message"
+            required
+          ></textarea>
+        </div>
+        <div class="my-3 py-3 text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
